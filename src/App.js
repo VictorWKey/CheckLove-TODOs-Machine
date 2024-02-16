@@ -34,7 +34,7 @@ function App() {
   const completedTodos = todos.filter(todo => todo.completed).length; // Estado derivado
   const totalTodos = todos.length; // Estado derivado
 
-  const searchTodos = todos.filter((item) => item.text.toLowerCase().includes(search.toLowerCase()));
+  const searchedTodos = todos.filter((item) => item.text.toLowerCase().includes(search.toLowerCase()));
 
   return (
     <>
@@ -42,7 +42,13 @@ function App() {
       <TodoSearch search = {search} setSearch={setSearch} />
 
       <TodoList>
-        {searchTodos.map(t => <TodoItem key={t.text} text={t.text} completed={t.completed}/>)}
+        {searchedTodos.map(t => (<TodoItem
+          key={t.text}
+          text={t.text}
+          completed={t.completed}
+          todos = {todos}
+          setTodos= {setTodos}
+      />))}
       </TodoList>
 
       <CreateTodoButton/>
