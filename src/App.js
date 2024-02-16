@@ -24,8 +24,6 @@ const defaultTodos = [
   }
 ]
 
-
-
 function App() {
   const [todos, setTodos] = React.useState(defaultTodos);
   console.log(todos);
@@ -44,6 +42,7 @@ function App() {
     newTodos[index].completed = !newTodos[index].completed;
     setTodos(newTodos);
   };
+
   const deleteTodo = (text) => {
     const newTodos = [...todos];
     const index = newTodos.findIndex(todo => todo.text === text);
@@ -54,6 +53,7 @@ function App() {
   return (
     <>
       <TodoCounter completed = {completedTodos} total = {totalTodos}/>
+
       <TodoSearch search = {search} setSearch={setSearch} />
 
       <TodoList>
