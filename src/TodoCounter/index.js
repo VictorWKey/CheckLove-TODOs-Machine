@@ -2,8 +2,8 @@ import React from 'react'
 import "./TodoCounter.css"
 
 function TodoCounter({completed, total}) {
-  return ( 
-    completed === total 
+  return (
+    (completed === total) && (total > 0)
     ?
       <div className="TodoCounter">Completaste todos los TODOs!</div>
     :
