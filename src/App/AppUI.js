@@ -5,23 +5,23 @@ import { TodoItem } from '../TodoItem';
 import { CreateTodoButton } from '../CreateTodoButton';
 import { TodoList } from '../TodoList';
 import { TodoLoading } from '../TodoLoading';
+import { TodoContext } from '../TodoContext';
 
-function AppUI({
-    loading,
-    error,
-    completedTodos,
-    totalTodos,
-    search,
-    setSearch,
-    searchedTodos,
-    completeTodo,
-    deleteTodo
-}) {
+function AppUI() {
+
+    const {
+        loading,
+        error,
+        searchedTodos,
+        completeTodo,
+        deleteTodo
+    } = React.useContext(TodoContext)
+
     return (
         <>
-            {<TodoCounter completed = {completedTodos} total = {totalTodos} loading = {loading}/>}
+            <TodoCounter/>
 
-            <TodoSearch search = {search} setSearch={setSearch} />
+            <TodoSearch/>
 
             {loading ? (
                 <>
