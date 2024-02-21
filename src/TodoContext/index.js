@@ -13,10 +13,18 @@ function TodoProvider({children}){
 
   const [search, setSearch] = React.useState("");
 
+  const [openModal, setOpenModal] = React.useState(false);
+
   const completedTodos = todos.filter(todo => todo.completed).length; // Estado derivado
   const totalTodos = todos.length; // Estado derivado
 
   const searchedTodos = todos.filter((item) => item.text.toLowerCase().includes(search.toLowerCase()));
+
+  const addTodo = (text) => {
+    const newTodos = [...todos];
+    newTodos.push( { text, completed: false } );
+    saveTodos(newTodos);
+  }
 
   const completeTodo = (text) => {
     const newTodos = [...todos];
@@ -32,6 +40,19 @@ function TodoProvider({children}){
     saveTodos(newTodos);
   };
 
+  const isDuplicated = (text) => {
+    const newTodos = [...todos];
+    const todoIndex = newTodos.findIndex(
+      todo => todo.text === text
+    )
+
+    if (todoIndex !== -1){
+      return true;
+    }
+
+    return false;
+  }
+
 
   return (
     <TodoContext.Provider value = {{
@@ -43,7 +64,11 @@ function TodoProvider({children}){
       setSearch,
       searchedTodos,
       completeTodo,
-      deleteTodo
+      deleteTodo,
+      openModal,
+      setOpenModal,
+      addTodo,
+      isDuplicated
     }}>
       {children}
     </TodoContext.Provider>
