@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/CheckLove-TODOs-Machine/static/css/main.8d878a3f.css",
+    "main.js": "/CheckLove-TODOs-Machine/static/js/main.18971e71.js",
+    "index.html": "/CheckLove-TODOs-Machine/index.html",
+    "static/media/delete.svg": "/CheckLove-TODOs-Machine/static/media/delete.7018c4465589031bd51c8efbe21df9ca.svg",
+    "static/media/check.svg": "/CheckLove-TODOs-Machine/static/media/check.e9a948bba52a34123d2ed7aeda0ea495.svg",
+    "main.8d878a3f.css.map": "/CheckLove-TODOs-Machine/static/css/main.8d878a3f.css.map",
+    "main.18971e71.js.map": "/CheckLove-TODOs-Machine/static/js/main.18971e71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d878a3f.css",
+    "static/js/main.18971e71.js"
+  ]
+}
